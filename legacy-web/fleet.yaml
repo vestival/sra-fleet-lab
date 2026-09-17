@@ -1,3 +1,4 @@
 # legacy-web was installed by hand from the Rancher Apps UI on lab3-prod. This file hands it to Fleet.
+# force: true lets the upgrade take over fields the manual install owns.
 defaultNamespace: default
-helm: {repo: "https://stefanprodan.github.io/podinfo", chart: podinfo, version: 6.15.0, releaseName: legacy-web, values: {replicaCount: 2, ui: {color: "#1565c0", message: "legacy-web, now managed by Fleet"}}}
+helm: {repo: "https://stefanprodan.github.io/podinfo", chart: podinfo, version: 6.15.0, releaseName: legacy-web, force: true, values: {replicaCount: 2, ui: {color: "#1565c0", message: "legacy-web, now managed by Fleet"}}}
