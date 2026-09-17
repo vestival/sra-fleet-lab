@@ -19,7 +19,7 @@ targetCustomizations:
     clusterName: c-dvnnz
     helm:
       values:
-        replicaCount: 1
+        replicaCount: 12
         ui:
           color: "#2e7d32"
           message: "lab3-dev, eu-west-3"
