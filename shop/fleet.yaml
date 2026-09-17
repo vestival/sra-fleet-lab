@@ -4,4 +4,4 @@ defaultNamespace: shop
 helm: {repo: "https://stefanprodan.github.io/podinfo", chart: podinfo, version: 6.14.0, releaseName: shop, values: {replicaCount: 1, ui: {message: "shop, no lane matched"}}}
 targetCustomizations:
 - {name: non-prod, clusterGroup: non-prod, helm: {version: 6.15.0, values: {ui: {color: "#2e7d32", message: "shop 6.15.0, non-prod lane"}}}}
-- {name: prod, clusterGroup: prod, helm: {version: 6.14.0, values: {replicaCount: 2, ui: {color: "#c62828", message: "shop 6.14.0, prod lane"}}}}
+- {name: prod, clusterGroup: prod, helm: {version: 6.15.0, values: {replicaCount: 2, ui: {color: "#c62828", message: "shop 6.15.0, prod lane"}}}}
