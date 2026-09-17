@@ -1,0 +1,43 @@
+defaultNamespace: podinfo
+
+helm:
+  repo: https://stefanprodan.github.io/podinfo
+  chart: podinfo
+  version: 6.15.0
+  releaseName: podinfo
+  values:
+    replicaCount: 1
+    ui:
+      message: "default values, no cluster matched"
+    resources:
+      requests:
+        cpu: 10m
+        memory: 32Mi
+
+targetCustomizations:
+  - name: dev
+    clusterName: c-dvnnz
+    helm:
+      values:
+        replicaCount: 1
+        ui:
+          color: "#2e7d32"
+          message: "lab3-dev, eu-west-3"
+
+  - name: staging
+    clusterName: c-dxxsm
+    helm:
+      values:
+        replicaCount: 2
+        ui:
+          color: "#f9a825"
+          message: "lab3-staging, eu-north-1"
+
+  - name: prod
+    clusterName: c-kqgtk
+    helm:
+      values:
+        replicaCount: 3
+        ui:
+          color: "#c62828"
+          message: "lab3-prod, eu-west-3"
