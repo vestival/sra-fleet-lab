@@ -1,0 +1,3 @@
+# Same app, deployed only to test what "Always keep resources" does when the GitRepo is deleted.
+defaultNamespace: keep-test
+helm: {repo: "https://stefanprodan.github.io/podinfo", chart: podinfo, version: 6.15.0, releaseName: keep-test, values: {replicaCount: 1, ui: {color: "#6a1b9a", message: "keep-resources test"}}}
