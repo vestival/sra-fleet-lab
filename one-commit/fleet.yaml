@@ -8,7 +8,7 @@ helm:
   values:
     replicaCount: 1
     ui:
-      message: "v2, one commit"
+      message: "v3, one commit"
     resources:
       requests:
         cpu: 10m
