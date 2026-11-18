@@ -1,0 +1,35 @@
+defaultNamespace: one-commit
+
+helm:
+  repo: https://stefanprodan.github.io/podinfo
+  chart: podinfo
+  version: 6.15.0
+  releaseName: podinfo
+  values:
+    replicaCount: 1
+    ui:
+      message: "v1"
+    resources:
+      requests:
+        cpu: 10m
+        memory: 32Mi
+
+targetCustomizations:
+  - name: eks
+    clusterSelector:
+      matchLabels: {type: eks}
+    helm:
+      values:
+        ui: {color: "#ff9900"}
+  - name: k3s
+    clusterSelector:
+      matchLabels: {type: k3s}
+    helm:
+      values:
+        ui: {color: "#30ba78"}
+  - name: rke2
+    clusterSelector:
+      matchLabels: {type: rke2}
+    helm:
+      values:
+        ui: {color: "#0c322c"}

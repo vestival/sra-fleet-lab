@@ -13,3 +13,5 @@ The clusters:
 `podinfo/` deploys the podinfo Helm chart to every cluster with different values per cluster, set in `fleet.yaml` under `targetCustomizations`. There is one values block per cluster and no per-cluster values files.
 
 Nothing here is production configuration.
+
+`one-commit/` deploys podinfo to every Rancher Prime lab cluster labelled `env=prod` (EKS, K3s and RKE2). Each distro gets its own UI color through `clusterSelector` on its `type` label. A single change to `ui.message` rolls out to all three clusters from one commit.
